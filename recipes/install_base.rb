@@ -17,6 +17,9 @@ packages.each { |p| package p }
 # FIXME: ignoring lua for right now
 # make optional in the future
 
+directory "#{node[:mod_security][:dir]}"
+
+
 if node[:mod_security][:from_source]
   # COMPILE FROM SOURCE
 
@@ -45,7 +48,6 @@ if node[:mod_security][:from_source]
     end
   end
 
-  directory "#{node[:mod_security][:dir]}"
 
   # Download and compile mod_security from source
 
