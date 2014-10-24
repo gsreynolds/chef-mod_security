@@ -17,7 +17,9 @@ packages.each { |p| package p }
 # FIXME: ignoring lua for right now
 # make optional in the future
 
-directory "#{node[:mod_security][:dir]}"
+directory node[:mod_security][:dir] do
+  recursive true
+end
 
 
 if node[:mod_security][:from_source]
